@@ -37,7 +37,7 @@ exports.CreateUser = (user, callback) => {
             return callback(undefined, 'Username already Exists!');
 
         } else {
-            password_manager.encryptPassword(user.password, (err, hash) => {
+            password_manager.EncryptPassword(user.password, (err, hash) => {
                 if (err) {
                     return callback(undefined, err);
                 }
@@ -63,7 +63,7 @@ exports.LoginUser = (username, password, callback) => {
         }
 
         if (found_user[0]) {
-            password_manager.checkPasswordAgainstHash(password, found_user[0].password, (err, passwords_match) => {
+            password_manager.CheckPasswordAgainstHash(password, found_user[0].password, (err, passwords_match) => {
                 if (err) {
                     return callback(undefined, err);
                 }

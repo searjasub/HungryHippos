@@ -1,9 +1,9 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 // no logging here. it is the class that implements this class's
 // responsibility to log errors & status's.
-exports.encrypt_password = (password, callback) => {
+exports.EncryptPassword = (password, callback) => {
     bcrypt.genSalt(saltRounds, (err, salt) => {
         if (err) {
             // return the error and an undefined hash
@@ -22,7 +22,7 @@ exports.encrypt_password = (password, callback) => {
     });
 }
 
-exports.check_password_against_hash = (password, hash, callback) => {
+exports.CheckPasswordAgainstHash = (password, hash, callback) => {
     bcrypt.compare(password, hash, (err, password_hash) => {
         if (err) {
             // return error
