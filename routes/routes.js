@@ -85,10 +85,6 @@ router.route("/logout").get(
 router.route("/gameScreen").get(
     
     function(req, res){
-        if (req.session.user != null)
-        res.render('game');
-        else
-        res.render('userLogin');
         //auth.requireLogin(req, res, () => {
             res.render('game', {loggedIn: isLoggedIn});
         //});

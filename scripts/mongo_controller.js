@@ -27,8 +27,8 @@ const UserSchema = new Schema({
 // create user object
 exports.user = mongoose.model(userCollectionName, UserSchema);
 
-exports.CreateUser = (user, callback) => {
-    this.user.find({user:user.username}, (err, found_user) => {
+exports.CreateUser = (username, password, callback) => {
+    this.user.find({user:username}, (err, found_user) => {
         if (err) {
             return callback(undefined, err);
         }
@@ -37,7 +37,7 @@ exports.CreateUser = (user, callback) => {
             return callback(undefined, 'Username already Exists!');
 
         } else {
-            password_manager.EncryptPassword(user.password, (err, hash) => {
+            password_manager.EncryptPassword(password, (err, hash) => {
                 if (err) {
                     return callback(undefined, err);
                 }
