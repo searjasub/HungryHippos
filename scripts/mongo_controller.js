@@ -1,8 +1,8 @@
 // imports
 const mongoose = require('mongoose');
-
+const config = require('../config.json');
 // consts
-const databaseUrl = "mongodb+srv://Admin:Admin123@cluster-hsisi.mongodb.net/test?retryWrites=true&w=majority"
+const databaseUrl = `mongodb+srv://hungryhippos:${config.password}@cluster0-1oqrg.mongodb.net/test?retryWrites=true&w=majority`
 const userCollectionName = "users";
 
 // connect to database
@@ -19,17 +19,14 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     username : String,
     password: String,
-    score : Number,
-    games_played : Number,
-    losses : Number,
-    wins : Number,
-    is_admin : Boolean
+    high_score: Number,
+    games_played: Number
 });
 
 // create user object
 exports.user = mongoose.model(userCollectionName, UserSchema);
 
-exports.createUser = (user, callback) => {
+exports.CreateUser = (user, callback) => {
     this.user.find({user:user.username}, (err, found_user) => {
         if (err) {
             return callback(undefined, err);
@@ -48,7 +45,7 @@ exports.createUser = (user, callback) => {
                     new_user.save();
                     // build safe user
                     let safe_user = createSafeUser(new_user);
-                    return callback(safe_user, 'User created Successfully!');
+                    return callback(safe_user, undefined);
                 } else {
 
                     return callback(undefined, 'Error in creating password.');
@@ -58,7 +55,7 @@ exports.createUser = (user, callback) => {
     });
 }
 
-exports.loginUser = (username, password, callback) => {
+exports.LoginUser = (username, password, callback) => {
     this.user.find({username: username}, (err, found_user) => {
         if (err) {
             return callback(undefined, err);
@@ -71,7 +68,7 @@ exports.loginUser = (username, password, callback) => {
                 }
                 if (passwords_match) {
                     let safe_user = createSafeUser(found_user[0]);
-                    return callback(safe_user, 'Logged in successfully');
+                    return callback(safe_user, undefined);
                 } else {
                     return callback(undefined, 'Incorrect Username or Password');
                 }
@@ -82,29 +79,27 @@ exports.loginUser = (username, password, callback) => {
     });
 }
 
-exports.edit_user = (user, callback) => {
+exports.EditUser = (user, callback) => {
     this.user.find({_id:user.id}, (err, found_user) => {
         if (err) {
             return callback(undefined, err);
         }
 
         if (found_user[0]) {
-            found_user[0].score = user.score;
+            found_user[0].high_score = user.high_score;
             found_user[0].games_played = user.games_played;
-            found_user[0].losses = user.losses;
-            found_user[0].wins = user.wins;
 
             found_user[0].save();
 
             let safe_user = createSafeUser(found_user);
-            return callback(safe_user, 'Stats saved');
+            return callback(safe_user, undefined);
         } else {
             return callback(undefined, 'User not found');
         }
     });
 }
 
-exports.getHighScores = (callback) => {
+exports.GetHighScores = (callback) => {
     this.user.find({}, `username score`, {sort: {score: descending}}, (err, leaderboard) => {
         if (err) {
             return callback(undefined);
@@ -123,11 +118,8 @@ const createBlankUser = (username, hash) => {
     let user = new this.user({
         username: username,
         password: hash,
-        score: 0,
-        gamesPlayed: 0,
-        losses: 0,
-        wins: 0,
-        isAdmin: false
+        high_score: 0,
+        games_played: 0,
     });
     return user;
 };
@@ -136,11 +128,8 @@ const createSafeUser = (user) => {
     let safe_user = {
         id: user.id,
         username: user.username,
-        score: user.score,
-        gamesPlayed: user.gamesPlayed,
-        losses: user.losses,
-        wins: user.wins,
-        isAdmin: user.isAdmin
+        high_score: user.high_score,
+        games_played: user.games_played
     };
     return safe_user;
 };
