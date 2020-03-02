@@ -1,6 +1,7 @@
 // imports
 const mongoose = require('mongoose');
 const config = require('../config.json');
+const password_manager = require('./password_manager.js');
 // consts
 const databaseUrl = `mongodb+srv://hungryhippos:${config.password}@cluster0-1oqrg.mongodb.net/test?retryWrites=true&w=majority`
 const userCollectionName = "users";

@@ -57,7 +57,7 @@ router.route("/gameover").post(
         if (req.session.user) {
             req.session.user.score += parseInt(req.body.score);
             req.session.user.games_played += 1;
-            mongo_controller.edit_user(req.session.user, (err, user) => {
+            mongo_controller.EditUser(req.session.user, (err, user) => {
                 if (err) {
                     console.log(err);
                 }
@@ -121,7 +121,7 @@ router.route("/register").get(
 
 router.route("/register").post(
     function(req,res){ 
-        mongo_controller.createUser(req.body.username, req.body.password, (user, err) => {
+        mongo_controller.CreateUser(req.body.username, req.body.password, (user, err) => {
             if (err) {
                 var model = {
                     title: 'Register Page',
