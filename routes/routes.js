@@ -1,6 +1,7 @@
 const express = require('express');
 const mongo_controller = require('../scripts/mongo_controller.js');
 const router = express.Router();
+const auth = require('../scripts/auth.js');
 var isLoggedIn = false;
 
 
