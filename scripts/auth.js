@@ -9,7 +9,7 @@ exports.requireLogin = (req, res, callback) => {
         res.redirect("/");
         return;
     }
-}
+};
 
 exports.requireAdmin = (req, res, callback) => {
     if (req.session.user.isAdmin) {
@@ -22,4 +22,4 @@ exports.requireAdmin = (req, res, callback) => {
         res.redirect("/");
         return;
     }
-}
+};
