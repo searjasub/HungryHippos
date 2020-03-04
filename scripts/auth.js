@@ -7,9 +7,8 @@ exports.requireLogin = (req, res, callback) => {
             message: 'You must be logged in to view this page.'
         };
         res.redirect("/", model);
-        return;
     }
-}
+};
 
 exports.requireAdmin = (req, res, callback) => {
     if (req.session.user.isAdmin) {
@@ -17,9 +16,9 @@ exports.requireAdmin = (req, res, callback) => {
     } else {
         let model = {
             title: 'Error',
-            message: 'You must do not have the previleges to view this page.'
+            message: 'You must do not have the privileges to view this page.'
         };
         res.redirect("/", model);
         return;
     }
-}
+};

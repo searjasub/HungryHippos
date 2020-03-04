@@ -13,9 +13,9 @@ h1{
     color: white;
     background: rgb(59, 135, 165);
     text-align: center;
-    font-family: Stencil;
+    font-family: Stencil, sans-serif;
     font-size: 45px;
-    font-weight: 10;
+    font-weight: 100;
 }
 
 h2{
@@ -29,8 +29,8 @@ h2{
     text-align: center;
     height: 300px;
     width: 250px;
-    font-family: Stencil;
-    font-weight: 10;
+    font-family: Stencil, sans-serif;
+    font-weight: 100;
 }
 
 .navBar ul{
@@ -56,8 +56,8 @@ li a {
     display: block;
     border:solid 1px rgb(29, 163, 163);
     border-radius:5px;
-    font-family: Stencil;
-    font-weight: 10;
+    font-family: Stencil, sans-serif;
+    font-weight: 100;
 }
 
 li a:hover {
