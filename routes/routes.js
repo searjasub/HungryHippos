@@ -7,30 +7,19 @@ var isLoggedIn = false;
 
 router.route("/").get(
     function(req, res){
-        var model = {
-            username: req.session.username,
-            isAdmin: req.session.isAdmin,
-            loggedIn: isLoggedIn
-        }
-        res.render('index', model)
+        res.render('index', {loggedIn: req.session.user})
     }
 )
 
 router.route("/login").get(
     function (req, res) {
-        var model = {
-            title : "Login Page",
-            username : req.session.username,
-            userId : req.session.userId,
-            loggedIn: isLoggedIn
-        }
-        res.render("userLogin", model);
+        res.render("userLogin", {loggedIn: req.session.user});
     }
 );
 
 router.route("/login").post(
     async function (req, res) {
-        
+
         mongo_controller.LoginUser(req.body.username, req.body.password, (user, err) => {
             if (err) {
                 console.log(err);
@@ -38,7 +27,7 @@ router.route("/login").post(
             }
             if (user) {
                 req.session.user = user;
-                res.render("game");
+                res.render("game", {loggedIn: req.session.user});
             }
         });
     }
@@ -87,7 +76,7 @@ router.route("/gameScreen").get(
     
     function(req, res){
         //auth.requireLogin(req, res, () => {
-            res.render('game', {loggedIn: isLoggedIn});
+            res.render('game', {loggedIn: req.session.user});
         //});
     }
 )
@@ -95,13 +84,9 @@ router.route("/gameScreen").get(
 router.route("/userInfo").get(
 
     function(req, res){
-        if (req.session.user != null)
-        res.render('userInfo');
-        else
-        res.render('userLogin');
         auth.requireLogin(req, res, () => {
             res.render('userInfo', {user: req.session.user,
-                loggedIn: isLoggedIn});
+                loggedIn: req.session.user});
         });
 
     }
@@ -120,12 +105,7 @@ router.route("/register").post(
     function(req,res){ 
         mongo_controller.CreateUser(req.body.username, req.body.password, (user, err) => {
             if (err) {
-                var model = {
-                    title: 'Register Page',
-                    message: err,
-                    loggedIn: isLoggedIn
-                };
-                res.render('userRegister', model);
+                res.render('userRegister', {loggedIn:req.session.user});
                 return;
             }
             if (user) {
@@ -142,7 +122,7 @@ router.route("/register").post(
 
 router.route("/leaderboard").get(
     async function(req, res){
-        await mongo_controller.getHighScores(function (callback, err){            
+        mongo_controller.GetHighScores(function (callback, err){            
             var topTenUsers = []
             for(i = 0; i < 10; i++){
                 if(callback[i]){
@@ -152,7 +132,7 @@ router.route("/leaderboard").get(
             
             model = {
                 users : topTenUsers,
-                loggedIn: isLoggedIn
+                loggedIn: req.session.user
             }
             res.render("leaderboard", model);
         }) 
