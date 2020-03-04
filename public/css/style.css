@@ -67,5 +67,100 @@ li a:hover {
 }
 
 body{
-    background-color: darkgray;
+    background-color: rgb(240, 228, 215);
 }
+
+#button_container{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+}
+#top_button_container{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 1px;
+}
+#middle_left_button_container{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    padding-right: 1px;
+}
+#middle_right_button_container{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+}
+#bottom_button_container{
+    padding-top: 1px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+
+}
+#displayedButtonsred{
+    margin: 10px;
+    font-size: 32;
+    width: 7%;
+    height: 60px;
+    border: none;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #ee3333;
+
+}
+#displayedButtonsblue{
+    margin: 10px;
+    font-size: 32;
+    width: 7%;
+    height: 60px;
+    border: none;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: rgb(76, 117, 214);
+
+}
+#displayedButtonsgreen{
+    margin: 10px;
+    font-size: 32;
+    width: 7%;
+    height: 60px;
+    border: none;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #219a21;
+
+}
+#displayedButtonsyellow{
+    margin: 5px;
+    font-size: 32;
+    width: 7%;
+    height: 60px;
+    border: none;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #e4e44c;
+}
+
+
+
+
+
