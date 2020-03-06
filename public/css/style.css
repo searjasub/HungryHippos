@@ -119,13 +119,12 @@ body{
 
 }
 #displayedButtonsblue{
-    margin: 10px;
     font-size: 32;
-    width: 7%;
+    width: 130px;
     height: 60px;
     border: none;
     color: #000000;
-    padding: 15px 32px;
+    padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -135,11 +134,11 @@ body{
 #displayedButtonsgreen{
     margin: 10px;
     font-size: 32;
-    width: 7%;
+    width: 70px;
     height: 60px;
     border: none;
     color: #000000;
-    padding: 15px 32px;
+    padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -160,7 +159,52 @@ body{
     background-color: #e4e44c;
 }
 
+#gameCanvas {
+    background: rgb(77, 219, 160);
+    border:1px solid #dddddd;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    display: block;
+}
 
 
+#loginForm {
+    width: 10%;
+    margin: 0 auto;
+    padding: 100px;
+}
 
+#button_content {
+    margin: 8px;
+    font-size: 20;
+    width: 70px;
+    height: 30px;
+    border: none;
+    color: #000000;
+    padding: 5px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: darkgrey;
+}
 
+#registerBox {
+    width: 10%;
+    margin: 0 auto;
+    padding: 100px;
+}
+
+#register_btn {
+    margin: 8px;
+    font-size: 20;
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: #000000;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: darkgrey;
+}
