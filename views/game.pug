@@ -6,9 +6,15 @@ append body
     div(id="center_everything")
         canvas(id="gameCanvas" width=900 height=600)
 
-        p(id="score") Score: 0
+        img(id="redHippo" src="./images/red.png" width="0" height="0")
+        img(id="blueHippo" src="./images/blue.png" width="0" height="0")
+        img(id="greenHippo" src="./images/green.png" width="0" height="0")
+        img(id="yellowHippo" src="./images/yellow.png" width="0" height="0")
+        img(id="balls" src="./images/ball.png" width="0" height="0")
 
-         div(id="button_container")
+        //- p(id="score") Score: 0
+
+        div(id="button_container")
             span(id="top_button_container")
                 button(id="displayedButtonsred" onclick="moveUpClicked()") `
             span(id="middle_left_button_container")
@@ -19,8 +25,8 @@ append body
                     button(id="displayedButtonsyellow" onclick="moveRightClicked()") ]
 
     form(id="scoreform", action="/gameover", method="post", class="hidden")
-        input(type="text", name="score", id="textboxscore")
+        //- input(type="text", name="score", id="textboxscore")
 
-    script(src="/game.js")
+    script(src="script.js")
 
 
