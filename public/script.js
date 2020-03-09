@@ -2,10 +2,10 @@
 var theCanvas = document.getElementById("gameCanvas");
 var ctx = theCanvas.getContext("2d");
 
-//circle
+//square
 ctx.beginPath();
 ctx.fillStyle = "rgb(95, 233, 175)";
-ctx.arc(445, 300, 300, 0, 2 * Math.PI, true);
+ctx.rect(200, 50, 500, 490);
 ctx.fill();
 ctx.stroke();
 
@@ -62,6 +62,9 @@ img_balls.onload = () => {
     ctx.drawImage(img_balls, 450, 365, 40, 40);
 }
 
+function moveUpClicked() {
+
+}
 
 window.addEventListener("keydown",checkKeyPress,false);
 
