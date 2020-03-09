@@ -1,0 +1,2 @@
+Let me know if there need to be any fixes to the hippoes. Any fixes will be easy since it'll just be a modification to the template layer. 
+Also, these were made BIG with the fact that they will probably be shrunk in mind. Feel free to size down to what you need.
