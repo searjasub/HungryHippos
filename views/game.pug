@@ -6,27 +6,26 @@ append body
         div(id="order")
             div(id="top_button_container")
                 p(id="score") Score: 0
-                button(id="displayedButtonsred" onclick="moveUpClicked()") `
+                button(id="displayedButtonsred" onclick="moveUpClicked()") Q
             div(id="middle_left_button_container")
                 p(id="score") Score: 0
-                button(id="displayedButtonsblue" onclick="moveLeftClicked()") Space
+                button(id="displayedButtonsblue" onclick="moveLeftClicked()") C
             div(id="bottom_button_container")
                 p(id="score") Score: 0
                 button(id="displayedButtonsgreen"  onclick="moveDownClicked()") M
             div(id="middle_right_button_container")
                 p(id="score") Score: 0
-                button(id="displayedButtonsyellow" onclick="moveRightClicked()") ]
+                button(id="displayedButtonsyellow" onclick="moveRightClicked()") P
+        div(id="center_everything")
+            canvas(id="gameCanvas" width=900 height=600)
 
-    div(id="center_everything")
-        canvas(id="gameCanvas" width=900 height=600)
+            img(id="redHippo" src="./images/red.png" width="0" height="0")
+            img(id="blueHippo" src="./images/blue.png" width="0" height="0")
+            img(id="greenHippo" src="./images/green.png" width="0" height="0")
+            img(id="yellowHippo" src="./images/yellow.png" width="0" height="0")
+            img(id="balls" src="./images/ball.png" width="0" height="0")
 
-        img(id="redHippo" src="./images/red.png" width="0" height="0")
-        img(id="blueHippo" src="./images/blue.png" width="0" height="0")
-        img(id="greenHippo" src="./images/green.png" width="0" height="0")
-        img(id="yellowHippo" src="./images/yellow.png" width="0" height="0")
-        img(id="balls" src="./images/ball.png" width="0" height="0")
-
-        //- p(id="score") Score: 0
+            //- p(id="score") Score: 0
 
 
     form(id="scoreform", action="/gameover", method="post", class="hidden")
