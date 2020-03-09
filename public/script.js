@@ -18,19 +18,19 @@ img_red_hippo.onload = () => {
 // blue hippo
 var img_blue_hippo = document.getElementById("blueHippo");
 img_blue_hippo.onload = () => {
-    ctx.drawImage(img_blue_hippo, -110, -100, 560, 470);
+    ctx.drawImage(img_blue_hippo, -100, -112, 560, 470);
 }
 
 //green hippo
 var img_green_hippo = document.getElementById("greenHippo");
 img_green_hippo.onload = () => {
-    ctx.drawImage(img_green_hippo, 520, 220, 460, 470);
+    ctx.drawImage(img_green_hippo, 510, 228, 460, 470);
 }
 
 //yellow hippo
 var img_yellow_hippo = document.getElementById("yellowHippo");
 img_yellow_hippo.onload = () => {
-    ctx.drawImage(img_yellow_hippo, 520, -90, 460, 470);
+    ctx.drawImage(img_yellow_hippo, 510, -92, 460, 470);
 }
 
 //balls
