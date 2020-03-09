@@ -33,35 +33,35 @@ img_yellow_hippo.onload = () => {
     ctx.drawImage(img_yellow_hippo, 510, -92, 460, 470);
 }
 
-//balls
-var img_balls = document.getElementById("balls");
-img_balls.onload = () => {
+// //balls
+// var img_balls = document.getElementById("balls");
+// img_balls.onload = () => {
 
-    // ctx.drawImage(img_balls, 450, 215, 40, 40);
+//     // ctx.drawImage(img_balls, 450, 215, 40, 40);
 
-    // ctx.drawImage(img_balls, 350, 250, 40, 40);
-    // ctx.drawImage(img_balls, 390, 250, 40, 40);
-    // ctx.drawImage(img_balls, 430, 250, 40, 40);
-    // ctx.drawImage(img_balls, 470, 250, 40, 40);
-    // ctx.drawImage(img_balls, 510, 250, 40, 40);
-    // ctx.drawImage(img_balls, 550, 250, 40, 40);
+//     // ctx.drawImage(img_balls, 350, 250, 40, 40);
+//     // ctx.drawImage(img_balls, 390, 250, 40, 40);
+//     // ctx.drawImage(img_balls, 430, 250, 40, 40);
+//     // ctx.drawImage(img_balls, 470, 250, 40, 40);
+//     // ctx.drawImage(img_balls, 510, 250, 40, 40);
+//     // ctx.drawImage(img_balls, 550, 250, 40, 40);
 
-    // ctx.drawImage(img_balls, 350, 290, 40, 40);
-    // ctx.drawImage(img_balls, 390, 290, 40, 40);
-    // ctx.drawImage(img_balls, 430, 290, 40, 40);
-    // ctx.drawImage(img_balls, 470, 290, 40, 40);
-    // ctx.drawImage(img_balls, 510, 290, 40, 40);
-    // ctx.drawImage(img_balls, 550, 290, 40, 40);
+//     // ctx.drawImage(img_balls, 350, 290, 40, 40);
+//     // ctx.drawImage(img_balls, 390, 290, 40, 40);
+//     // ctx.drawImage(img_balls, 430, 290, 40, 40);
+//     // ctx.drawImage(img_balls, 470, 290, 40, 40);
+//     // ctx.drawImage(img_balls, 510, 290, 40, 40);
+//     // ctx.drawImage(img_balls, 550, 290, 40, 40);
 
-    // ctx.drawImage(img_balls, 350, 330, 40, 40);
-    // ctx.drawImage(img_balls, 390, 330, 40, 40);
-    // ctx.drawImage(img_balls, 430, 330, 40, 40);
-    // ctx.drawImage(img_balls, 470, 330, 40, 40);
-    // ctx.drawImage(img_balls, 510, 330, 40, 40);
-    // ctx.drawImage(img_balls, 550, 330, 40, 40);
+//     // ctx.drawImage(img_balls, 350, 330, 40, 40);
+//     // ctx.drawImage(img_balls, 390, 330, 40, 40);
+//     // ctx.drawImage(img_balls, 430, 330, 40, 40);
+//     // ctx.drawImage(img_balls, 470, 330, 40, 40);
+//     // ctx.drawImage(img_balls, 510, 330, 40, 40);
+//     // ctx.drawImage(img_balls, 550, 330, 40, 40);
 
-    // ctx.drawImage(img_balls, 450, 365, 40, 40);
-}
+//     // ctx.drawImage(img_balls, 450, 365, 40, 40);
+// }
 
 class Ball {
     constructor(data) {
@@ -145,7 +145,7 @@ window.addEventListener("keydown",checkKeyPress,false);
 
 function checkKeyPress(key){
     if(key.keyCode == "81"){//Q PLAYER 1
-        alert("The Q HAS BEEN PRESSED")
+        run();
     }
     if(key.keyCode == "67"){//C PLAYER 2
         alert("The C HAS BEEN PRESSED")
