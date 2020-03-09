@@ -63,3 +63,19 @@ img_balls.onload = () => {
 }
 
 
+window.addEventListener("keydown",checkKeyPress,false);
+
+function checkKeyPress(key){
+    if(key.keyCode == "81"){//Q PLAYER 1
+        alert("The Q HAS BEEN PRESSED")
+    }
+    if(key.keyCode == "67"){//C PLAYER 2
+        alert("The C HAS BEEN PRESSED")
+    }
+    if(key.keyCode == "77"){//M PLAYER 3
+        alert("The M HAS BEEN PRESSED")
+    }
+    if(key.keyCode == "80"){//P PLayer 4
+        alert("The P HAS BEEN PRESSED")
+    }
+}
