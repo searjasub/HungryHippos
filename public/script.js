@@ -2,10 +2,10 @@
 var theCanvas = document.getElementById("gameCanvas");
 var ctx = theCanvas.getContext("2d");
 
-//circle
+//square
 ctx.beginPath();
 ctx.fillStyle = "rgb(95, 233, 175)";
-ctx.arc(445, 300, 300, 0, 2 * Math.PI, true);
+ctx.rect(200, 50, 500, 490);
 ctx.fill();
 ctx.stroke();
 
@@ -18,19 +18,19 @@ img_red_hippo.onload = () => {
 // blue hippo
 var img_blue_hippo = document.getElementById("blueHippo");
 img_blue_hippo.onload = () => {
-    ctx.drawImage(img_blue_hippo, -110, -100, 560, 470);
+    ctx.drawImage(img_blue_hippo, -100, -112, 560, 470);
 }
 
 //green hippo
 var img_green_hippo = document.getElementById("greenHippo");
 img_green_hippo.onload = () => {
-    ctx.drawImage(img_green_hippo, 520, 220, 460, 470);
+    ctx.drawImage(img_green_hippo, 510, 228, 460, 470);
 }
 
 //yellow hippo
 var img_yellow_hippo = document.getElementById("yellowHippo");
 img_yellow_hippo.onload = () => {
-    ctx.drawImage(img_yellow_hippo, 520, -90, 460, 470);
+    ctx.drawImage(img_yellow_hippo, 510, -92, 460, 470);
 }
 
 //balls
@@ -139,3 +139,21 @@ const updateLoop = () => {
 
 
 
+
+
+window.addEventListener("keydown",checkKeyPress,false);
+
+function checkKeyPress(key){
+    if(key.keyCode == "81"){//Q PLAYER 1
+        alert("The Q HAS BEEN PRESSED")
+    }
+    if(key.keyCode == "67"){//C PLAYER 2
+        alert("The C HAS BEEN PRESSED")
+    }
+    if(key.keyCode == "77"){//M PLAYER 3
+        alert("The M HAS BEEN PRESSED")
+    }
+    if(key.keyCode == "80"){//P PLayer 4
+        alert("The P HAS BEEN PRESSED")
+    }
+}
