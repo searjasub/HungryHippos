@@ -2,24 +2,23 @@ extends header.pug
 append body
     head
         link(href='/css/style.css', rel='stylesheet', type='text/css')
-    span
+    span(id="te")
         div(id="order")
             div(id="top_button_container")
-                p(id="score") Score: 0
+                p(class="score" id="p1score") Score: 0
                 button(id="displayedButtonsred" onclick="moveUpClicked()") Q
             div(id="middle_left_button_container")
-                p(id="score") Score: 0
+                p(class="score" id="p2score") Score: 0
                 button(id="displayedButtonsblue" onclick="moveLeftClicked()") C
             div(id="bottom_button_container")
-                p(id="score") Score: 0
+                p(class="score" id="p3score") Score: 0
                 button(id="displayedButtonsgreen"  onclick="moveDownClicked()") M
             div(id="middle_right_button_container")
-                p(id="score") Score: 0
+                p(class="score" id="p4score") Score: 0
                 button(id="displayedButtonsyellow" onclick="moveRightClicked()") P
 
         div(id="center_everything")
             canvas(id="gameCanvas" width=900 height=600)
-
             img(id="redHippo" src="./images/red.png" width="0" height="0")
             img(id="blueHippo" src="./images/blue.png" width="0" height="0")
             img(id="greenHippo" src="./images/green.png" width="0" height="0")

@@ -60,10 +60,21 @@ li a {
     font-weight: 100;
 }
 
+#te{
+    display: flex;
+    flex-direction: row;
+}
+
 li a:hover {
     transition: 1s;
     background-color: #555;
     color: white;
+}
+
+#gameCanvas{
+    align-items: center;
+    align-content: center;
+    align-self: center;
 }
 
 body{
@@ -72,6 +83,13 @@ body{
 
 #order{
     display: inline-block;
+    padding-left:25px;
+    padding-right: 50px;
+    width: 111;
+}
+
+#center_everything{
+    width: fit-content
 }
 
 #top_button_container{
@@ -82,13 +100,9 @@ body{
 
     padding-right: 1px;
 }
-#middle_right_button_container{
 
-}
 #bottom_button_container{
     padding-top: 1px;
-
-
 }
 #displayedButtonsred{
     margin: 10px;
@@ -144,7 +158,8 @@ body{
     display: inline-block;
     background-color: #e4e44c;
 }
-#score{
+.score{
+    padding-left: 10px;
     text-align: center;
 }
 
