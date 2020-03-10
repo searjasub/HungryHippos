@@ -1,3 +1,10 @@
+class Vector {
+    constructor (x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
 window.onload = () => {
     // 'global' vars
     const canvas = document.getElementById("gameCanvas");
@@ -55,12 +62,18 @@ window.onload = () => {
         hippos.forEach((hippo) => {
             hippo.update();
         })
+        balls.forEach((ball) => {
+            ball.update(balls);
+        })
     }
 
     const draw = () => {
         drawBackground(ctx);
         hippos.forEach((hippo) => {
             hippo.draw(ctx);
+        });
+        balls.forEach((ball) => {
+            ball.draw(ctx);
         });
     }
 
@@ -72,10 +85,27 @@ window.onload = () => {
         }, 40) //25 fps
     }
 
+    // testing
+    generateBalls = () => {
+        for (let i = 0; i < 10; i++) {
+            let data = {
+                pos: new Vector(Math.random() * 500, Math.random() * 500),
+                vel: new Vector(Math.random() * 20 - 5, Math.random() * 20 - 5),
+                radius: 20,
+                img: document.getElementById("balls")
+            }
+            console.log(data);
+            balls.push(new Ball(data));
+        }
+    }
+
     // inital code
-    let keyData = [{keyCode: 81, action: () => {alert("THE Q KEY HAS BEEN PRESSED");}}];
+    
+    let keyData = [{keyCode: 81, action: () => {alert("The Q key has been pressed")}}];
     KeyDetection.init();
     KeyDetection.addKeyData(keyData);
     initHippos();
+    generateBalls();
     draw();
+    run();
 }

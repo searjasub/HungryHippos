@@ -30,8 +30,9 @@ append body
 
     form(id="scoreform", action="/gameover", method="post", class="hidden")
         //- input(type="text", name="score", id="textboxscore")
-    script(src="game.js")
-    script(src="keyDetection.js")
-    script(src="hippo.js")
-    script(src="ball.js")
+    script(scr="vector.js", defer)
+    script(src="ball.js", defer)
+    script(src="hippo.js", defer)
+    script(src="keyDetection.js", defer)
+    script(src="game.js", defer)
 
