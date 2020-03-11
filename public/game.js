@@ -87,9 +87,9 @@ window.onload = () => {
 
     // testing
     generateBalls = () => {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 15; i++) {
             let data = {
-                pos: new Vector(Math.random() * 500, Math.random() * 500),
+                pos: new Vector(Math.random() * 300 + 300, Math.random() * 250 + 150),
                 vel: new Vector(Math.random() * 20 - 5, Math.random() * 20 - 5),
                 radius: 20,
                 img: document.getElementById("balls")
