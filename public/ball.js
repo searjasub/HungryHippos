@@ -50,9 +50,9 @@ class Ball {
     }
 
     checkWallCollision() {
-        if (this.pos.x >= 900 - this.radius || this.pos.x <= 0 + this.radius) {
+        if (this.pos.x >= 680 - this.radius || this.pos.x <= 180 + this.radius) {
             this.bouceOffWall(true);
-        } else if (this.pos.y >= 600 - this.radius || this.pos.y <= 0 + this.radius) {
+        } else if (this.pos.y >= 510 - this.radius || this.pos.y <= 40 + this.radius) {
             this.bouceOffWall(false);
         }
     }

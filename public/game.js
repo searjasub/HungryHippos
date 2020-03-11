@@ -9,7 +9,7 @@ window.onload = () => {
     // 'global' vars
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
-    const playArea = {startx: 200, starty: 50, x: 500, y:490}
+    const playArea = {startx: 200, starty: 50, x: 500, y:490};
     const colors = {background: "rgb(102, 204, 255)", playArea: "rgb(95, 233, 175)"}
     let balls = new Array();
     let hippos = new Array();
@@ -43,9 +43,9 @@ window.onload = () => {
             ypos: -92,
             xlen: 460,
             ylen: 470
-        }
+        };
         hippos.push(new Hippo(redHippoData), new Hippo(blueHippoData), new Hippo(greenHippoData), new Hippo(yellowHippoData));
-    }
+    };
 
     const drawBackground = (ctx) => {
         ctx.fillStyle = colors.background;
@@ -55,17 +55,17 @@ window.onload = () => {
         ctx.rect(playArea.startx, playArea.starty, playArea.x, playArea.y);
         ctx.fill();
         ctx.stroke();
-    }
+    };
 
     // game steps
     const update = () => {
         hippos.forEach((hippo) => {
             hippo.update();
-        })
+        });
         balls.forEach((ball) => {
             ball.update(balls);
         })
-    }
+    };
 
     const draw = () => {
         drawBackground(ctx);
@@ -75,7 +75,7 @@ window.onload = () => {
         balls.forEach((ball) => {
             ball.draw(ctx);
         });
-    }
+    };
 
     // game loop
     const run = () => {
@@ -93,11 +93,11 @@ window.onload = () => {
                 vel: new Vector(Math.random() * 20 - 5, Math.random() * 20 - 5),
                 radius: 20,
                 img: document.getElementById("balls")
-            }
+            };
             console.log(data);
             balls.push(new Ball(data));
         }
-    }
+    };
 
     // inital code
     
@@ -108,4 +108,4 @@ window.onload = () => {
     generateBalls();
     draw();
     run();
-}
+};
